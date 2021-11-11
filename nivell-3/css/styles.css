@@ -1,0 +1,43 @@
+/*Animació custom barra de missatges error*/
+.animacio-missatge {
+    animation: entra-surt;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes entra-surt { 
+    from {
+       opacity: 0.00;
+       top: -1rem;
+    }
+    3%{
+        opacity: 0.10;
+        top: 0.5rem;
+    }
+    8%{
+        opacity: 0.50;
+        top: 1rem;
+    }
+    10% {
+        opacity: 1.00;
+        top: 1rem;
+    }
+    90% {
+        opacity: 1.00;
+        top: 1rem;
+    }
+    95% {
+        opacity: 0.10;
+        top: -0.5rem; 
+    }
+    98% {
+        opacity: 0.05;
+        top: -0.75rem; 
+    }
+    to {
+        opacity: 0.00;
+        top: -1rem;
+    }
+}
