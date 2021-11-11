@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST['ingressar']) || isset
     <h2 class="text-lg">Ingrés i retirada d'efectiu</h2>
   </div>
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" class="flex self-center justify-self-end">
-    <button type="submit" name="tancaSessio" class="hover:border hover:border-white hover:rounded-md hover:bg-pink-800 m-1 p-1"><i class="fas fa-power-off p-1"></i>Tanca sessió</button>
+    <button type="submit" name="tancaSessio" class="border border-transparent rounded-3xl hover:rounded-3xl hover:bg-pink-800 m-2 p-2"><i class="fas fa-power-off p-1"></i>Tanca sessió</button>
   </form>
 </header>
 
