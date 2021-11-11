@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST['ingressar']) || isset
 
   } else if (isset($_POST['ingressar'])) { //Import vàlid, es vol ingressar
    
-    $compteUsuari->registraMoviment('ingressar', $import);
+    $compteUsuari->registraMoviment('ingressar', number_format(floatval($import), 2, '.',''));
     $_POST["errors"] = 3;
     unset($_POST['ingressar']);
     unset($_POST['import']);
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST['ingressar']) || isset
 
   } else if (isset($_POST['retirar'])) { //Import vàlid, es vol retirar
     
-    if (!$compteUsuari->registraMoviment('retirar', $import)) {//Si no hi ha fons suficients, no retiris
+    if (!$compteUsuari->registraMoviment('retirar', number_format(floatval($import), 2,'.',''))) {//Si hi ha fons suficients, retira
      
       $_POST["errors"] = 2;
       unset($_POST['retirar']);
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isset($_POST['ingressar']) || isset
       }
       $_SESSION["usuari"] = serialize($compteUsuari);
 
-    } else {
+    } else {//Si no hi ha fons suficients, no retiris
      
       $_POST["errors"] = 3;
       unset($_POST['retirar']);
